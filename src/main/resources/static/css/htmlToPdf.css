@@ -1,0 +1,74 @@
+@page{
+    size: A4 landscape;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', Helvetica, sans-serif;
+}
+main{
+    margin: 25px auto;
+    margin-bottom: 0;
+    width: 95%;
+    max-width: 900px;
+}
+.container::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;      
+}
+.right-info{
+    text-align: right; 
+    margin-left: 1em;
+}
+.table-progetto td{
+    border: none;
+    padding: 5px 0px;
+}
+td {
+    border: 2px solid black;
+    padding: 10px;
+}
+.table-cod{
+    width: 50%;
+    margin: 20px auto;
+}
+.table-cod td.header{
+    font-weight: bold;
+    text-align: center;
+}
+.table-cod td.header{
+    font-weight: bold;
+    text-align: center;
+}
+.header{
+    font-weight: bold;
+}
+.table-2{
+    margin: 10px auto;
+    width: 100%;
+    max-width: 1000px;
+}
+td.desc{
+    font-size: 0.9em;
+}
+.no-border{
+    border: none;
+}
+footer{
+    margin: 25px auto; 
+    width: 100%; 
+    max-width: 1000px;
+}
+footer::after{
+    content: "";
+    display: table;
+    clear: both;
+}

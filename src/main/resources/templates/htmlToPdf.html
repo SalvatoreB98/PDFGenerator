@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>PDF</title>
+    
+         
+  
+     
+   <link rel="stylesheet" href="./src/main/resources/static/css/htmlToPdf.css"/>
+
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div style="max-width: 50%; float: left;">
+                <h1>BUONO DI PRELIEVO</h1>
+                <div>
+                    <table class="table-progetto">
+                        <tr>
+                            <td>
+                                <strong>PROGETTO</strong>
+                            </td>
+                            <td class="desc">
+                                PNRR 5G «M1 C2 I3 3.2 Italia 5G»
+                                Finanziato con fondi PNRR 
+                                NextGenerationEU M1 C2 I3 3.2 
+                                Italia 5G
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>CUP</strong>
+                            </td>
+                            <td class="desc">
+                                B47G21000090004
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>n.ro Buono 
+                                    Prelievo</strong>
+                            </td>
+                            <td class="desc">
+                                123456/2023
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Data Buono 
+                                    Prelievo </strong>
+                            </td>
+                            <td class="desc">
+                                2/02/2023
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="right-info">
+                <img src="./src/main/resources/static/logo/logo.jpg" height="54" width="212"/>
+                <div>
+                    <strong> Infrastrutture Wireless italiane S.p.a</strong>
+                    <div>
+                        <small>
+                        <div>
+                            Sede legale: Milano, Via Gaetano Negri, 1
+                        </div>
+                        <div>
+                            Codice Fiscale, Partita IVA e iscrizione al Registro <br/>
+                            delle Imprese di Milano 08936640963 <br/>
+                            Numero REA MI 2057238 <br/>
+                            Capitale Sociale € 600.000.000,0 <br/>
+                        </div>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table-cod">
+            <tr>
+                <td class="header">CODICE SITO INFRATEL</td>
+                <td class="header">CODICE SITO INWIT</td>
+                <td class="header">NOME SITO</td>
+                <td class="header">COMUNE (PROV)</td>
+            </tr>
+            <tr>
+                <td>NIN506</td>
+                <td>I019SU</td>
+                <td>019SU PNRR - NIN0556 - Villaperuccio</td>
+                <td> VILLAPERUCCIO (SU) </td>
+            </tr>
+        </table>
+    </main>
+    <div class="table-2">
+        <table>
+            <tr class="header">
+                <td>Articolo</td>
+                <td>Descrizione</td>
+                <td>N.ro seriale</td>
+                <td>N.ro ordine</td>
+                <td>Posizione</td>
+                <td>N.ro DDT</td>
+                <td>Data DDT</td>
+                <td>Data Installazione</td>
+                <td>Costo unitario</td>
+                <td>Q.tà</td>
+                <td>costo totale</td>
+            </tr>
+            <tr th:each="item : ${items}">
+                <td th:text="${item}"></td>
+                <td th:text="${item}"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <div style="float: left; width: 40%;">
+            <div style="font-size: 1em;">
+                Roma, 02/02/2023
+            </div>
+        </div>
+        <div style="float: right; width: 40%; text-align: right;">
+            <div>
+                Firma responsabile prelievo magazzino
+            </div>
+            <div style="margin-top: 3em; margin-left: auto; border-bottom: 2px solid black; width: 70%;">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
