@@ -40,9 +40,9 @@ public class PDFServiceGeneratorImpl implements PDFServiceGenerator {
 		templateEngine.setTemplateResolver(templateResolver);
 		Context context = new Context();
 		for(int i=0; i<10; i++){
-			this.listItems.add(new Item("articolo" + i, "desc" + i, "" + i, 1000 + i + ""));
+			this.listItems.add(new Item("articolo" + i, "desc" + i, "" + i, 1000 + i + "", null, null, null , null, null, null, null));
 		}
-		System.out.println(listItems.get(0).article);
+		System.out.println(listItems.get(0).getArticle());
 		
 		context.setVariable("size", this.listItems.size());
 		context.setVariable("items", this.listItems);

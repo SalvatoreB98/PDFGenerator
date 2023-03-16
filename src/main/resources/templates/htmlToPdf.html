@@ -167,15 +167,16 @@
             <tr th:each="item, iterStat: ${items}" th:if="${iterStat.index > 5}">
                 <td th:text="${item.article}"></td>
                 <td th:text="${item.description}"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td th:text="${item.serialNumber}"></td>
+                <td th:text="${item.order}"></td>
+                <td th:text="${item.position}"></td>
+                <td th:text="${item.ddtNumber}"></td>
+                <td th:text="${item.ddtDate}"></td>
+                <td th:text="${item.installation}"></td>
+                <td th:text="${item.unitaryCost}"></td>
+                <td th:text="${item.quantity}"></td>
+                <td th:text="${item.totalCost}"></td>
+                <td th:text="${item.description}"></td>
             </tr>
         </table>
     </div>
