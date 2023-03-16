@@ -3,6 +3,7 @@ package com.pdf.generator.service.impl;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.Writer;
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -23,7 +24,7 @@ import com.pdf.generator.service.PDFServiceGenerator;
 
 @Service
 public class PDFServiceGeneratorImpl implements PDFServiceGenerator {
-
+	private ArrayList<Item> listItems = new ArrayList<>();
 	@Override
 	public byte[] htmlToPdf2()   {
 		try {
@@ -37,9 +38,15 @@ public class PDFServiceGeneratorImpl implements PDFServiceGenerator {
 
 		TemplateEngine templateEngine = new TemplateEngine();
 		templateEngine.setTemplateResolver(templateResolver);
-		String[] names = {"a", "b", "c", "d", "x", "y", "z", "Wow"};
 		Context context = new Context();
-		context.setVariable("items", names);
+		for(int i=0; i<10; i++){
+			this.listItems.add(new Item("articolo" + i, "desc" + i, "" + i, 1000 + i + ""));
+		}
+		System.out.println(listItems.get(0).article);
+		
+		context.setVariable("size", this.listItems.size());
+		context.setVariable("items", this.listItems);
+		context.setVariable("code", "codes");
 		
 		 
 		
@@ -89,6 +96,8 @@ public class PDFServiceGeneratorImpl implements PDFServiceGenerator {
 		
 		return null;
 
+	}
+	public void addListItems(){
 	}
 
 }

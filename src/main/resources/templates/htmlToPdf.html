@@ -85,7 +85,7 @@
                 <td class="header">COMUNE (PROV)</td>
             </tr>
             <tr>
-                <td>NIN506</td>
+                <td th:text="${code}"></td>
                 <td>I019SU</td>
                 <td>019SU PNRR - NIN0556 - Villaperuccio</td>
                 <td> VILLAPERUCCIO (SU) </td>
@@ -93,7 +93,7 @@
         </table>
     </main>
     <div class="table-2">
-        <table>
+        <table th:if="${size <= 5}">
             <tr class="header">
                 <td>Articolo</td>
                 <td>Descrizione</td>
@@ -108,8 +108,65 @@
                 <td>costo totale</td>
             </tr>
             <tr th:each="item : ${items}">
-                <td th:text="${item}"></td>
-                <td th:text="${item}"></td>
+                <td th:text="${item.article}"></td>
+                <td th:text="${item.description}"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        
+        <table th:if="${size > 5}">
+            <tr class="header">
+                <td>Articolo</td>
+                <td>Descrizione</td>
+                <td>N.ro seriale</td>
+                <td>N.ro ordine</td>
+                <td>Posizione</td>
+                <td>N.ro DDT</td>
+                <td>Data DDT</td>
+                <td>Data Installazione</td>
+                <td>Costo unitario</td>
+                <td>Q.tà</td>
+                <td>costo totale</td>
+            </tr>
+            <tr th:each="item, iterStat: ${items}" th:if="${iterStat.index < 5}">
+                <td th:text="${item.article}"></td>
+                <td th:text="${item.description}"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <table style="margin-top: 5em;">
+            <tr class="header">
+                <td>Articolo</td>
+                <td>Descrizione</td>
+                <td>N.ro seriale</td>
+                <td>N.ro ordine</td>
+                <td>Posizione</td>
+                <td>N.ro DDT</td>
+                <td>Data DDT</td>
+                <td>Data Installazione</td>
+                <td>Costo unitario</td>
+                <td>Q.tà</td>
+                <td>costo totale</td>
+            </tr>
+            <tr th:each="item, iterStat: ${items}" th:if="${iterStat.index > 5}">
+                <td th:text="${item.article}"></td>
+                <td th:text="${item.description}"></td>
                 <td></td>
                 <td></td>
                 <td></td>
